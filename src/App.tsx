@@ -7,6 +7,7 @@ import Culture from './Pages/Culture/Culture';
 import Cuisine from './Pages/Cuisine/Cuisine';
 import Activite from './Pages/Activite/Activite';
 import Contact from './Pages/Contact/Contact';
+import Footer from './Components/Footer/Footer';
 
 export default function App() {
   return (
@@ -22,6 +23,9 @@ export default function App() {
         <Route path="/Contact" element={<Contact />} />
       
       </Routes>
+      <Footer />
+
+
     </BrowserRouter>
 
   )

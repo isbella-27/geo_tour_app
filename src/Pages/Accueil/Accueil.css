@@ -1,116 +1,349 @@
+/* Styles généraux du corps et des titres */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Fond clair uniforme pour toute la page */
+    line-height: 1.6;
+}
+
+/* --- SECTION ACCUEIL (BANDEAU SUPÉRIEUR) --- */
 .accueil-container {
-  min-height: 70vh;
-  background-image: url('/public/Fazao.jpg'); /* chemin vers ton image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  
+    min-height: 70vh;
+    background-image: url('/public/Fazao.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
 }
 
 .accueil-container p {
     font-size: 30px;
     text-align: center;
     margin-top: 1px;
+    line-height: 1.4;
 }
 .accueil-container h1 {
     font-size: 80px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 200;
-
+    margin-bottom: 20px;
 }
 
 .button {
     display: flex;
     gap: 10px;
+    margin-top: 20px;
 }
 
-.sejour{
-  border: solid 0.8px;
-  background-color: transparent;
+.sejour {
+    border: solid 0.8px white;
+    background-color: transparent;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
-.sejour:hover{
-  color: #000;
-  background-color: white;
+.sejour:hover {
+    color: #000;
+    background-color: white;
+    border-color: white;
 }
 
-.image-accueil {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.button > .Button:not(.sejour) > button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.button > .Button:not(.sejour) > button:hover {
+    background-color: #006666;
+}
+
+/* --- SECTION SITES TOURISTIQUES DU TOGO --- */
+
+h1:nth-of-type(2) {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-weight: normal;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 2rem 5%;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .grid section {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+    height: 100%;
 }
 
 .grid section:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 0;
 }
 
 .grid h3 {
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
-  color: #000;
+    font-size: 1.25rem;
+    color: #333;
+    margin: 15px 20px 5px 20px;
+    font-weight: bold;
 }
 
 .grid p {
-  margin: 0.3rem 0;
-  font-size: 0.95rem;
-  color: #555;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 20px;
+    line-height: 1.4;
 }
 
-.grid .location {
-  color: #008000;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.grid section p:nth-of-type(1) {
+    color: #6c757d;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.grid section p:nth-of-type(1)::before {
+    content: '📍';
+    margin-right: 8px;
+    font-size: 1em;
+    color: #007bff;
+    line-height: 1;
+}
+
+.grid section p:nth-of-type(2) {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .grid .button {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
+    margin-top: 0;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.grid .button button {
-  background-color: #008000;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.grid .Button {
+    width: 100%;
 }
 
-.grid .button button:hover {
-  background-color: #00b300;
+.grid .Button button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.grid .Button button:hover {
+    background-color: #006666;
+}
+
+---
+## 🗺️ SECTION RÉGIONS À EXPLORER
+
+.region {
+    padding: 60px 40px;
+    font-family: sans-serif;
+    margin-top: 0;
+    padding-bottom: 60px;
+}
+
+.region h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.region-grid section {
+    background-color: #1a6b47;
+    color: white;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    min-height: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.region-grid section p {
+    font-size: 1em;
+    margin: 0 0 20px 0; 
+    opacity: 0.8;
+    flex-grow: 1;
+}
+
+/* 🛑 CORRECTION : Conteneur des boutons pour alignement horizontal sans scrollbar */
+.region-buttons-wrapper {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; /* Empêche le retour à la ligne sur les grands écrans */
+    margin-top: 5px; 
+    
+    overflow-x: hidden; /* Cache la barre de défilement */
+    max-width: 100%; 
+    padding-bottom: 0; 
+    justify-content: space-between; /* Aide à distribuer l'espace */
+}
+
+
+.region-buttons-wrapper button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    
+    /* Réduction du padding pour optimiser l'espace */
+    padding: 8px 10px; 
+    
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    
+    /* flex-shrink: 0; est retiré pour permettre le rétrécissement du texte si nécessaire */
+    margin-right: 8px; /* Réduction de la marge entre les boutons */
+    margin-bottom: 0;
+    flex-basis: auto; 
+}
+
+.region-buttons-wrapper button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+---
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 2rem;
+    }
+    .accueil-container h1 { font-size: 60px; }
+    .accueil-container p { font-size: 24px; }
+
+    .region h1 { font-size: 2em; }
+    .region-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .accueil-container h1 { font-size: 45px; }
+    .accueil-container p { font-size: 20px; }
+    .button { flex-direction: column; align-items: center; }
+    .sejour, .button > .Button:not(.sejour) > button { width: 80%; }
+    h1:nth-of-type(2) { font-size: 1.8em; margin-top: 40px; margin-bottom: 30px; text-align: center; }
+
+    .region h1 { font-size: 1.8em; text-align: center; }
+    .region-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        padding: 0 20px;
+    }
+    .region-grid section {
+        max-width: 100%;
+        min-height: auto;
+        padding: 25px;
+    }
+    
+    /* 🛑 Surcharge pour permettre le retour à la ligne sur mobile/tablette */
+    .region-buttons-wrapper {
+        flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
+        overflow-x: hidden;
+        padding-bottom: 0;
+        justify-content: flex-start; /* Réaligne les boutons à gauche en mode wrap */
+    }
+    
+    .region-buttons-wrapper button {
+        margin-right: 8px; 
+        margin-bottom: 8px; /* Ajout d'une marge verticale pour la mise en page multi-lignes */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr; padding: 1rem; }
+    h1:nth-of-type(2) { font-size: 2em; margin-top: 40px; margin-bottom: 30px; }
+    .accueil-container h1 { font-size: 35px; }
+    .accueil-container p { font-size: 16px; }
+    .sejour, .button > .Button:not(.sejour) > button { width: 90%; padding: 10px 20px; }
+
+    .region h1 { font-size: 1.8em; }
+    .region-grid {
+        padding: 0 1rem;
+    }
+    .region-buttons-wrapper button {
+        padding: 7px 12px;
+        font-size: 0.85em;
+    }
 }

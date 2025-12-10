@@ -1,0 +1,431 @@
+/* ==================================================================
+// 1. STYLES GLOBAUX ET FONDATIONS
+// ================================================================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. CLASSES GÉNÉRIQUES POUR LES TITRES DE SECTION (Compacté) */
+.section-main-title { 
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px; /* RÉDUCTION */
+    font-weight: bold;
+}
+
+.section-main-subtitle { 
+    font-size: 1.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 25px; /* RÉDUCTION */
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- BANDEAU D'EN-TÊTE (Compacté) --- */
+.cuisine-header-section {
+    min-height: 50vh;
+    background-image: url('/public/fazao.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px; /* RÉDUCTION */
+    padding: 20px;
+    text-align: center;
+}
+
+.cuisine-header-section h1 {
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    margin-bottom: 10px; /* RÉDUCTION */
+}
+
+.cuisine-header-section p {
+    font-size: 24px;
+    margin-top: 1px;
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+
+.main-cuisines-section {
+    padding: 30px 5%; /* RÉDUCTION */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cuisines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.cuisine-card {
+    background-color: #fff;
+    border-radius: 6px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cuisine-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+}
+
+.cuisine-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.card-content { 
+    padding: 15px 20px 20px; 
+}
+
+.city-region-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.city-region-header h3 {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+/* Tags de Région/Type de plat */
+.region-tag {
+    font-size: 0.75em; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-weight: 500;
+    display: flex; 
+    align-items: center;
+}
+
+.region-tag.maritime, .region-tag.national {
+    background-color: #e6ffed; 
+    color: #008037; 
+}
+.region-tag.plateaux, .region-tag.sud {
+    background-color: #daf5de; 
+    color: #179326; 
+}
+.region-tag.savanes, .region-tag.nord { 
+    background-color: #fff3cd; 
+    color: #856404; 
+}
+
+.cuisine-card .description { 
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0 10px 0; /* RÉDUCTION */
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-content h4 {
+    margin: 0 0 8px 0; /* RÉDUCTION */
+}
+
+/* Tags d'Ingrédients dans la section Plats */
+.cuisine-tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0; 
+}
+
+.cuisine-tag {
+    color: #555;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    font-size: 0.8em;
+    font-weight: 500;
+    display: flex; 
+    align-items: center;
+}
+
+.cuisine-tag svg {
+    margin-right: 5px;
+    color: #006A4E; 
+}
+
+
+
+.boisson-section-container {
+    padding: 40px 20px 60px; /* RÉDUCTION */
+    background-color: #fff; 
+    text-align: center;
+}
+
+.boisson-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.boisson-image {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 6px; 
+}
+
+.boisson-card .card-content { 
+    padding: 15px 0 0 0; 
+    text-align: center; 
+}
+
+.boisson-card h3 {
+    margin: 0 0 3px 0; /* RÉDUCTION */
+}
+
+.boisson-tag {
+    color: #006A4E; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 0.9em;
+    margin: 0 0 8px 0; /* RÉDUCTION */
+}
+
+.boisson-tag svg {
+    margin-right: 5px;
+    color: #006A4E; 
+}
+
+
+
+.ingredients-section-container {
+    padding: 40px 20px 60px; /* RÉDUCTION */
+    background-color: white; 
+    text-align: center;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    max-width: 1100px; 
+    margin: 0 auto;
+    text-align: left;
+}
+
+.ingredient-card {
+    background-color: #fff; 
+    border-radius: 6px; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.ingredient-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px);
+}
+
+.ingredient-card h3 svg {
+    margin-right: 8px;
+    color: #006A4E; 
+}
+
+.card-header {
+    margin-bottom: 8px; /* RÉDUCTION */
+}
+
+/* Tag de Saisonnalité */
+.season-tag {
+    font-size: 0.7em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: flex; 
+    align-items: center;
+    color: #555;
+    background-color: #f7f7f7;
+}
+
+.season-tag svg {
+    margin-right: 4px;
+    color: #856404; 
+}
+
+.season-tag.saison-pluies {
+    background-color: #d6f2ff; 
+    color: #007bff;
+}
+.season-tag.saison-seche {
+    background-color: #ffe0b2; 
+    color: #ff9800;
+}
+
+
+
+.culinary-experiences-section { 
+    padding: 40px 20px 50px; /* RÉDUCTION */
+    background-color: #fff; 
+    text-align: center;
+}
+
+.experience-cards-grid { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.culinary-experience-card { 
+    background-color: #fff;
+    border-radius: 6px; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px; 
+    text-align: left; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.culinary-experience-card:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.culinary-experience-card h3 {
+    margin: 0 0 8px 0; /* RÉDUCTION */
+}
+
+.culinary-experience-card h3 svg {
+    margin-right: 8px;
+    color: #006A4E; 
+}
+
+.card-description-text { 
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px; /* RÉDUCTION */
+    line-height: 1.5;
+    min-height: 4.5em; 
+}
+
+.details-wrapper {
+    margin-bottom: 3px; /* RÉDUCTION */
+}
+
+.details-wrapper p svg, .inclus-list li svg {
+    margin-right: 6px; 
+    color: #006A4E; 
+}
+
+.inclus-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 8px; /* RÉDUCTION */
+    flex-grow: 1; 
+}
+
+.inclus-list li {
+    font-size: 0.9em; 
+    color: #555;
+    position: relative;
+    margin-bottom: 3px; 
+    display: flex; 
+    align-items: center;
+}
+
+.inclus-list li svg {
+    margin-right: 8px;
+    font-size: 1em;
+    color: #006A4E; 
+}
+
+/* 🟢 BOUTON DE RÉSERVATION (FIXÉ) 🟢 */
+.reserve-button {
+    /* Propriétés de base */
+    padding: 10px; 
+    background-color: #006A4E; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95em; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 8px; /* RÉDUCTION */
+    
+    /* PROPRIÉTÉS CLÉS POUR LE LIEN <a> */
+    display: block; 
+    text-decoration: none; 
+    text-align: center; 
+
+    /* FIX TAILLE */
+    width: 100%; 
+    box-sizing: border-box; /* Assure que le bouton s'ajuste SANS déborder */
+}
+
+.reserve-button:hover {
+    background-color: #00662d; 
+}
+
+/* ==================================================================
+// 7. MEDIA QUERIES (ADAPTATION RESPONSIVE)
+// ================================================================== */
+@media (max-width: 1100px) {
+    .cuisines-grid,
+    .boisson-grid,
+    .ingredients-grid,
+    .experience-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90%; 
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cuisines-grid,
+    .boisson-grid,
+    .ingredients-grid,
+    .experience-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: 20px;
+    }
+    .cuisine-image, .boisson-image {
+        height: 140px; 
+    }
+    .cuisine-header-section h1 {
+        font-size: 40px;
+    }
+    .cuisine-header-section p {
+        font-size: 18px;
+    }
+}

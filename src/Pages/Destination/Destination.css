@@ -1,0 +1,331 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; 
+    color: #333;
+}
+
+
+.destination-header-section {
+    min-height: 50vh;
+    background-image: url('/public/fazao.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-header-section h1 {
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    margin-bottom: 15px;
+}
+
+.destination-header-section p {
+    font-size: 24px;
+    margin-top: 1px;
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+/* ==================================================================
+// 2. SECTION DES DESTINATIONS PRINCIPALES
+// ================================================================== */
+.main-destinations-section {
+    padding: 40px 5%; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Titre "Nos Destinations Principales" */
+.main-destinations-section h1 { 
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraphe de description sous le titre */
+.main-destinations-section > p { 
+    font-size: 1.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- GRILLE DES CARTES DE DESTINATION --- */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 0;
+}
+
+/* Style de chaque carte de destination (section) */
+.destination-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image de la carte */
+.destination-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Contenu de la carte (padding interne) */
+.card-content {
+    padding: 20px 25px; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+/* ==================================================================
+// 3. ÉLÉMENTS DE LA CARTE (TITRES, TAGS & FOOTER)
+// ================================================================== */
+
+/* --- EN-TÊTE DU TITRE ET DE LA RÉGION --- */
+.city-region-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+/* Titre de la ville (h3) */
+.city-region-header h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Pastille de région (.region-tag) */
+.region-tag {
+    font-size: 0.75em;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: normal;
+    white-space: nowrap;
+    margin: 0;
+    /* Styles par défaut/fallback */
+    background-color: #e0f2f1;
+    color: #00796b; 
+}
+
+/* Couleurs spécifiques pour les tags de région */
+.region-tag.maritime {
+    background-color: #e0f2f7; 
+    color: #007bff; 
+}
+
+.region-tag.plateaux {
+    background-color: #fff3e0; 
+    color: #e65100; 
+}
+
+.region-tag.savanes {
+    background-color: #ffe0b2; 
+    color: #ef6c00; 
+}
+
+/* --- DESCRIPTION ET POINTS D'INTÉRÊT --- */
+.description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1; 
+}
+
+/* Titre "Points d'intérêt" (h4) */
+.card-content h4 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px; 
+    font-weight: bold;
+}
+
+/* Conteneur des tags de points d'intérêt */
+.interest-points-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px; 
+}
+
+/* Tags de points d'intérêt */
+.interest-tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.9em;
+    font-weight: normal;
+    cursor: default; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+/* --- Styles spécifiques pour les Icônes React (SVG) --- */
+
+/* Style pour les icônes à l'intérieur des tags de région et d'intérêt */
+.interest-tag svg,
+.region-tag svg {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* --- FOOTER DE LA CARTE --- */
+.card-footer {
+    margin-top: auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px; 
+    border-top: 1px solid #eee; 
+}
+
+/* Meilleure période (.best-period) */
+.best-period {
+    font-size: 0.9em;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* ➡️ STYLE AJOUTÉ POUR L'ICÔNE DE CALENDRIER REACT */
+.best-period svg {
+    margin-right: 8px;
+    font-size: 1.2em; 
+    color: #495057; 
+}
+
+/* Styles du bouton Réserver (Link to="/Contact") */
+.book-button {
+    background-color: #006A4E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+    text-decoration: none; 
+    display: inline-block; 
+    text-align: center;
+}
+
+.book-button:hover {
+    background-color: #006666;
+}
+
+/* ==================================================================
+// 4. MEDIA QUERIES (RESPONSIVITÉ)
+// ================================================================== */
+
+@media (max-width: 1024px) {
+    .destination-header-section h1 { font-size: 50px; }
+    .destination-header-section p { font-size: 20px; }
+    .main-destinations-section h1 { font-size: 2.2em; }
+    .main-destinations-section > p { font-size: 1em; }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-header-section h1 { font-size: 40px; }
+    .destination-header-section p { font-size: 18px; }
+    .main-destinations-section h1 { font-size: 2em; }
+    .main-destinations-section > p { font-size: 1em; }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .destination-card {
+        margin-bottom: 20px; 
+    }
+    .card-content {
+        padding: 15px 20px; 
+    }
+    
+    /* Titres et espacements */
+    .city-region-header h3 { font-size: 1.6em; }
+    .description { margin-bottom: 15px; }
+    .card-content h4 { margin-bottom: 10px; }
+    .interest-points-wrapper { margin-bottom: 15px; }
+
+    /* Footer mobile (empilement) */
+    .card-footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px; 
+    }
+    .book-button {
+        width: 100%; 
+        padding: 9px 18px;
+        font-size: 0.9em;
+        min-width: unset; 
+    }
+}
+
+@media (max-width: 480px) {
+    .destination-header-section h1 { font-size: 35px; }
+    .destination-header-section p { font-size: 16px; }
+    .main-destinations-section h1 { font-size: 1.8em; }
+    .main-destinations-section > p { font-size: 0.95em; }
+    .city-region-header h3 { font-size: 1.4em; }
+    
+    .region-tag {
+        font-size: 0.7em;
+        padding: 4px 8px;
+    }
+    .interest-tag {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+}

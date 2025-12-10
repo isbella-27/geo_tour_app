@@ -1,0 +1,313 @@
+/* ==================================================================
+// 0. CONTENEUR PRINCIPAL & CARTE DE RECHERCHE
+// ================================================================== */
+
+/* Conteneur principal de la section de recherche */
+.search-accommodation-section {
+    padding: 60px 20px;
+    background-color: #f0f2f5;
+    /* Couleur de fond de la page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Carte de recherche (le rectangle blanc avec les champs) */
+.search-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 900px;
+    /* Limite la largeur de la carte */
+    margin-bottom: 30px;
+    /* Espace sous la carte */
+}
+
+.search-card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: left;
+    /* Aligné à gauche comme sur l'image */
+}
+
+/* Conteneur des champs de saisie (inputs) */
+.search-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne */
+    gap: 20px;
+    /* Espace entre les groupes d'inputs */
+    align-items: flex-end;
+    /* Aligne les éléments du bas si les labels sont de tailles différentes */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Permet aux groupes de prendre l'espace disponible */
+    min-width: 150px;
+    /* Largeur minimale pour les inputs */
+}
+
+.input-group label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Style général des inputs et selects */
+.input-group input,
+.input-group select,
+.custom-datepicker-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.custom-datepicker-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Wrappers pour les icônes de calendrier et flèche de sélection */
+.date-input-wrapper,
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* ==================================================================
+// 1. STYLES POUR LES ICÔNES REACT
+// ================================================================== */
+
+/* Icône de calendrier (FaCalendarAlt) - Remplacement du caractère 📅 */
+.date-input-wrapper .calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #006A4E;
+    /* Couleur sarcelle/verte */
+    font-size: 1.2em;
+    pointer-events: none;
+    /* Laisse l'input DatePicker cliquable */
+    z-index: 1;
+}
+
+/* Icône de voyageurs (FaUserFriends) */
+.select-wrapper .travelers-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    /* Couleur grise */
+    pointer-events: none;
+    z-index: 2;
+    font-size: 1.1em;
+}
+
+/* Ajustement du padding du select pour laisser de la place à l'icône de voyageurs */
+.select-wrapper select {
+    /* Augmentation du padding gauche pour l'icône FaUserFriends */
+    padding-left: 45px;
+    cursor: pointer;
+}
+
+/* Icône de flèche de sélection (FaAngleDown) - Remplacement du sélecteur CSS/HTML natif */
+.select-wrapper .select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d;
+    z-index: 2;
+    /* Règle de l'ancien sélecteur (flèche CSS) supprimée au profit de l'icône React */
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+/* Bouton de recherche (avec FaSearch) */
+.search-button {
+    background-color: #006A4E;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    min-width: 150px;
+    height: 48px;
+    margin-top: 28px;
+    display: flex;
+    /* Pour aligner l'icône et le texte */
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background-color: #006666;
+}
+
+.search-button .search-icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* ==================================================================
+// 2. BOUTONS DE FILTRE & ERREUR
+// ================================================================== */
+
+/* Boutons de filtre sous la carte */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.filter-button {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.filter-button:hover {
+    background-color: #dee2e6;
+    color: #212529;
+}
+
+.filter-button.active {
+    background-color: #006A4E;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ==================================================================
+// 3. MEDIA QUERIES pour la réactivité
+// ================================================================== */
+
+@media (max-width: 992px) {
+    .search-inputs {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .input-group {
+        flex: 1 1 calc(33% - 14px);
+    }
+
+    .search-button {
+        flex: 1 1 150px;
+    }
+
+    .search-card {
+        padding: 25px;
+    }
+
+    .search-card h2 {
+        font-size: 1.6em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .search-accommodation-section {
+        padding: 40px 15px;
+    }
+
+    .search-card {
+        padding: 20px;
+    }
+
+    .search-card h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .search-inputs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .input-group {
+        min-width: unset;
+    }
+
+    .search-button {
+        width: 100%;
+        margin-top: 10px;
+        height: auto;
+        min-width: unset;
+    }
+
+    .filter-buttons {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .filter-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-card h2 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .filter-buttons {
+        justify-content: stretch;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .filter-button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+}

@@ -28,9 +28,12 @@ export default function Footer() {
                     <h4>Navigation</h4>
                     <ul>
                         <li><Link to="/">Accueil</Link></li>
-                        <li><Link to="/destinations">Destinations</Link></li>
-                        <li><Link to="/regions">Régions</Link></li>
-                        <li><Link to="/reservations">Réserver</Link></li>
+                        <li><Link to="/Destination">Destinations</Link></li>
+                        <li><Link to="/Hebergement">Hébergements</Link></li>
+                        <li><Link to="/Culture">Cultures</Link></li>
+                        <li><Link to="/Cuisine">Cuisines</Link></li>
+                        <li><Link to="/Activite">Activités</Link></li>
+                        <li><Link to="/Contact">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -50,14 +53,14 @@ export default function Footer() {
                 <div className="footer-section">
                     <h4>Nous Contacter</h4>
                     <p>Lomé, Togo</p>
-                    <p>Email: contact@togotourisme.com</p>
-                    <p>Téléphone: (+228) 90 00 00 00</p>
+                    <p>Email: geotourtogo@gmail.com</p>
+                    <p>Téléphone: (+228) 98 32 18 28</p>
                 </div>
 
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; {currentYear} Togo Tourisme. Tous droits réservés.</p>
+                <p>&copy; {currentYear} GeoTour Togo. Tous droits réservés.</p>
             </div>
         </footer>
     );

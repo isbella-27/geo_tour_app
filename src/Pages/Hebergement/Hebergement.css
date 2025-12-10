@@ -1,0 +1,344 @@
+/* ==================================================================
+// 1. EN-TÊTE DE LA PAGE HÉBERGEMENT (Bannière)
+// ================================================================== */
+.hebergement-header-section {
+    min-height: 50vh;
+    background-image: url('/fazao.jpeg');
+    /* Assure-toi que ce chemin est correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hebergement-header-section h1 {
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    margin-bottom: 15px;
+}
+
+.hebergement-header-section p {
+    font-size: 24px;
+    margin-top: 1px;
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+.accommodation-list-section {
+    padding: 60px 20px;
+    background-color: #f0f2f5;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.accommodation-grid {
+    display: grid;
+    /* Responsive : 1, 2, ou 3 colonnes selon l'espace */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Message affiché lorsqu'il n'y a aucun résultat de filtre */
+.no-results-message {
+    grid-column: 1 / -1;
+    /* Prend toute la largeur de la grille */
+    font-size: 1.2em;
+    color: #888;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+
+.accommodation-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin: 0 auto;
+}
+
+.accommodation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image et Wrapper */
+.card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.accommodation-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Contenu */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-name {
+    font-size: 1.4em;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.card-rating {
+    font-size: 0.95em;
+    color: #333;
+    /* Changement de couleur pour laisser l'icône prendre le jaune */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.card-location {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-description {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Tags de fonctionnalités */
+.card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.feature-tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    display: flex;
+    /* Ajouté pour aligner l'icône et le texte */
+    align-items: center;
+}
+
+/* ==================================================================
+// 3.1. STYLES SPÉCIFIQUES AUX ICÔNES REACT (SVG)
+// ================================================================== */
+
+/* Alignement général des icônes SVG */
+.card-location svg,
+.card-rating svg,
+.feature-tag svg {
+    vertical-align: middle;
+}
+
+/* Icône de localisation (FaMapMarkerAlt) */
+.card-location svg {
+    margin-right: 5px;
+    color: #006A4E;
+    /* Couleur Sarcelle/verte pour l'épingle */
+    font-size: 1.1em;
+}
+
+/* Icône d'évaluation (FaStar) */
+.card-rating svg {
+    margin-right: 4px;
+    color: #ffc107;
+    /* Jaune standard pour l'étoile */
+    font-size: 1.2em;
+}
+
+/* Icônes de caractéristiques dans les tags */
+.feature-tag svg {
+    margin-right: 6px;
+    font-size: 1.1em;
+    color: #006A4E;
+    /* Couleur Sarcelle/verte pour les icônes de services */
+}
+
+
+/* Footer (Prix et Bouton) */
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.card-price {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Bouton Réserver (Harmonisé sur un Vert/Sarcelle pour l'exemple) */
+.book-button {
+    background-color: #006A4E;
+    /* Couleur Verte/Sarcelle */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    min-width: 100px;
+    text-decoration: none;
+    /* Pour le Link de React-Router-DOM */
+    text-align: center;
+}
+
+.book-button:hover {
+    background-color: #006666;
+}
+
+@media (max-width: 1024px) {
+    .hebergement-header-section h1 {
+        font-size: 50px;
+    }
+
+    .hebergement-header-section p {
+        font-size: 20px;
+    }
+
+    .accommodation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hebergement-header-section {
+        margin-bottom: 30px;
+        padding: 15px;
+    }
+
+    .hebergement-header-section h1 {
+        font-size: 40px;
+    }
+
+    .hebergement-header-section p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .accommodation-grid {
+        grid-template-columns: 1fr;
+        /* Une seule colonne */
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .accommodation-card {
+        max-width: 100%;
+    }
+
+    /* Ajustement de l'espacement du footer en mobile */
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .book-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hebergement-header-section h1 {
+        font-size: 35px;
+    }
+
+    .hebergement-header-section p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+    }
+
+    .card-name {
+        font-size: 1.2em;
+    }
+
+    .card-rating {
+        font-size: 0.9em;
+    }
+
+    .card-price {
+        font-size: 1.1em;
+    }
+
+    .book-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

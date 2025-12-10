@@ -3,56 +3,65 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Fond clair uniforme pour toute la page */
+    /* Couleur de fond générale suggérée (blanc cassé) */
+    background-color: #f0f2f5; 
     line-height: 1.6;
 }
 
-/* --- SECTION ACCUEIL (BANDEAU SUPÉRIEUR) --- */
 .accueil-container {
-    min-height: 70vh;
-    background-image: url('/public/Fazao.jpg');
+    min-height: 85vh; 
+    background-image: url('Danyi.jpg'); 
     background-size: cover;
-    background-position: center;
+    background-position: center center; 
     background-repeat: no-repeat;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 40px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); 
+    margin-bottom: 0; 
+}
+
+.accueil-container h1 {
+    font-size: 5em; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700; 
+    margin-bottom: 10px;
+    letter-spacing: -2px;
 }
 
 .accueil-container p {
-    font-size: 30px;
+    font-size: 1.2em;
+    font-weight: 300;
     text-align: center;
     margin-top: 1px;
     line-height: 1.4;
-}
-.accueil-container h1 {
-    font-size: 80px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    margin-bottom: 20px;
+    max-width: 600px;
+    margin-bottom: 30px;
 }
 
-.button {
+/* Conteneur des boutons */
+.button-wrapper { 
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 25px; 
+    margin-top: 30px;
 }
 
+/* Style du bouton "Réservez un séjour" (Transparent) */
 .sejour {
-    border: solid 0.8px white;
+    border: 2px solid white; 
     background-color: transparent;
     color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 14px 30px; 
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.05em;
     font-weight: bold;
     transition: all 0.3s ease;
     white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .sejour:hover {
     color: #000;
@@ -60,290 +69,493 @@ body {
     border-color: white;
 }
 
-.button > .Button:not(.sejour) > button {
-    background-color: #008080;
+/* Style du bouton "Découvrir les destinations" (Plein) */
+.button-wrapper > .Button:not(.sejour) > button {
+    background-color: #006A4E; 
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 14px 30px; 
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.05em;
     font-weight: bold;
     transition: background-color 0.3s ease;
     white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.button > .Button:not(.sejour) > button:hover {
+.button-wrapper > .Button:not(.sejour) > button:hover {
     background-color: #006666;
 }
-
-/* --- SECTION SITES TOURISTIQUES DU TOGO --- */
-
-h1:nth-of-type(2) {
-    font-size: 2.5em;
-    color: #333;
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    font-weight: normal;
+.home-intro-section {
+    display: flex;
+    max-width: 1200px; 
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 40px; 
+    align-items: flex-start; 
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    padding: 2rem 5%;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.grid section {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 380px;
+.intro-text-content {
+    flex: 1 1 50%; 
     text-align: left;
+}
+
+.intro-text-content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.intro-text-content p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.discover-culture-button {
+    background-color: #006A4E; 
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.discover-culture-button:hover {
+    background-color: #00662d;
+    transform: translateY(-1px);
+}
+
+/* GRILLE DES IMAGES DÉCALÉES (Staggered Grid) */
+.intro-image-grid-staggered {
+    flex: 1 1 50%; 
+    display: flex; 
+    gap: 20px; 
+    height: 100%;
+    align-items: flex-start;
+}
+
+.intro-grid-column {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    flex: 1; 
+}
+
+/* CLÉ DU DÉCALAGE : Applique un espace en haut à la colonne de droite */
+.intro-grid-column.right-column {
+    margin-top: 40px; 
+}
+
+/* Styles des cartes et des images */
+.intro-image-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    transition: box-shadow 0.3s;
+}
+
+.intro-image-wrapper:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.intro-image-wrapper:hover .intro-image {
+    transform: scale(1.05); 
+}
+
+/* ==================================================================
+// 2. SECTION DES STATISTIQUES CLÉS
+// ================================================================== */
+
+.key-stats-section {
+    background-color: #006A4E; 
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 50px; 
+    margin: 40px 0; 
+}
+
+.stat-item {
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease-in-out;
-    height: 100%;
+    align-items: center;
+    text-align: center;
+    flex: 1; 
+    max-width: 250px;
 }
 
-.grid section:hover {
-    transform: translateY(-5px);
+.stat-icon {
+    font-size: 2.5em; 
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid white; 
 }
 
-.grid img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-bottom: 0;
+.stat-value {
+    /* CLÉ: TAILLE RÉDUITE pour forcer le texte sur une seule ligne (ex: "40 ans et plus") */
+    font-size: 2.2em; 
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap; 
 }
 
-.grid h3 {
-    font-size: 1.25rem;
+.stat-label {
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.8;
+    /* Force les étiquettes sur une seule ligne */
+    white-space: nowrap; 
+}
+
+.why-visit-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto; 
+    text-align: center;
+}
+
+.why-visit-section h2 {
+    font-size: 2.5em;
     color: #333;
-    margin: 15px 20px 5px 20px;
-    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.grid p {
-    margin: 0;
-    font-size: 0.95rem;
+.why-visit-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.reasons-grid {
+    display: grid;
+    /* Crée une grille de 3 colonnes de largeur égale */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.reason-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card h3 {
+    font-size: 1.3em;
+    color: #333; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reason-card p {
+    font-size: 0.95em;
     color: #555;
-    padding: 0 20px;
+    line-height: 1.5;
+}
+
+/* Les icônes des raisons et des expériences partagent le même style de cercle */
+.card-icon {
+    /* Style du cercle vert clair autour de l'icône */
+    background-color: #e6f7f7; 
+    color: #006A4E; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 1px solid #00808030;
+}
+
+/* Styles spécifiques pour les icônes de la section 3 (Pourquoi Visiter) */
+.why-visit-section .card-icon {
+    height: 50px;
+    width: 50px;
+    font-size: 1.5em;
+}
+
+
+/* ==================================================================
+// 4. SECTION DESTINATIONS POPULAIRES
+// ================================================================== */
+
+.popular-destinations-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.popular-destinations-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.destination-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.destination-cards-grid {
+    display: grid;
+    /* 3 colonnes de taille égale */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.destination-image {
+    width: 100%;
+    /* Ratio d'aspect pour les images */
+    height: 200px; 
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.destination-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.destination-content p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.destination-link {
+    color: #006A4E; /* Couleur turquoise */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.destination-link:hover {
+    color: #006666;
+}
+
+.unique-experiences-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto; 
+    text-align: center;
+}
+
+.unique-experiences-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.experiences-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+}
+
+/* Comme nous utilisons <Link> autour des cartes, nous appliquons les styles directement au Link */
+.experience-card {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 70%; 
+    text-decoration: none;
+    color: inherit;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles spécifiques pour les icônes de la section 5 */
+.unique-experiences-section .card-icon {
+    height: 60px;
+    width: 60px;
+    font-size: 1.8em;
+    margin: 0 auto 15px auto; 
+}
+
+.experience-card h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.experience-card p {
+    font-size: 0.95em;
+    color: #555;
     line-height: 1.4;
 }
 
-.grid section p:nth-of-type(1) {
-    color: #6c757d;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    font-weight: normal;
-}
-
-.grid section p:nth-of-type(1)::before {
-    content: '📍';
-    margin-right: 8px;
-    font-size: 1em;
-    color: #007bff;
-    line-height: 1;
-}
-
-.grid section p:nth-of-type(2) {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.grid .button {
-    margin-top: 0;
-    padding: 0 20px 20px 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.grid .Button {
-    width: 100%;
-}
-
-.grid .Button button {
-    background-color: #008080;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.grid .Button button:hover {
-    background-color: #006666;
-}
-
----
-## 🗺️ SECTION RÉGIONS À EXPLORER
-
-.region {
-    padding: 60px 40px;
-    font-family: sans-serif;
-    margin-top: 0;
-    padding-bottom: 60px;
-}
-
-.region h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.region-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.region-grid section {
-    background-color: #1a6b47;
-    color: white;
-    border-radius: 12px;
-    padding: 30px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    min-height: 180px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.region-grid section p {
-    font-size: 1em;
-    margin: 0 0 20px 0; 
-    opacity: 0.8;
-    flex-grow: 1;
-}
-
-/* 🛑 CORRECTION : Conteneur des boutons pour alignement horizontal sans scrollbar */
-.region-buttons-wrapper {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap; /* Empêche le retour à la ligne sur les grands écrans */
-    margin-top: 5px; 
-    
-    overflow-x: hidden; /* Cache la barre de défilement */
-    max-width: 100%; 
-    padding-bottom: 0; 
-    justify-content: space-between; /* Aide à distribuer l'espace */
-}
-
-
-.region-buttons-wrapper button {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    
-    /* Réduction du padding pour optimiser l'espace */
-    padding: 8px 10px; 
-    
-    border-radius: 6px;
-    border: none;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    
-    /* flex-shrink: 0; est retiré pour permettre le rétrécissement du texte si nécessaire */
-    margin-right: 8px; /* Réduction de la marge entre les boutons */
-    margin-bottom: 0;
-    flex-basis: auto; 
-}
-
-.region-buttons-wrapper button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
----
-
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        padding: 2rem;
+@media (max-width: 1050px) {
+    /* Grille des raisons en 2 colonnes */
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .accueil-container h1 { font-size: 60px; }
-    .accueil-container p { font-size: 24px; }
+    
+    /* Grille d'expériences en 2 colonnes */
+    .experiences-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-    .region h1 { font-size: 2em; }
-    .region-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        padding: 0 2rem;
+@media (max-width: 900px) {
+    .accueil-container h1 {
+        font-size: 3em;
+    }
+    .accueil-container p {
+        font-size: 1em;
+    }
+    .button-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; 
+    }
+    .button-wrapper > .Button {
+        width: 100%;
+        max-width: 250px;
+    }
+    .button-wrapper > .Button button, .sejour {
+        width: 100%;
+    }
+    
+    /* Grille de destinations en 2 colonnes sur tablettes */
+    .destination-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        padding: 1.5rem;
-        gap: 1rem;
+    .home-intro-section {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 40px;
     }
-    .accueil-container h1 { font-size: 45px; }
-    .accueil-container p { font-size: 20px; }
-    .button { flex-direction: column; align-items: center; }
-    .sejour, .button > .Button:not(.sejour) > button { width: 80%; }
-    h1:nth-of-type(2) { font-size: 1.8em; margin-top: 40px; margin-bottom: 30px; text-align: center; }
+    
+    .intro-image-grid-staggered {
+        flex-direction: column;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 15px; 
+    }
+    
+    .intro-grid-column.right-column {
+        margin-top: 0; 
+    }
 
-    .region h1 { font-size: 1.8em; text-align: center; }
-    .region-grid {
+    .discover-culture-button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 250px;
+    }
+
+    /* Statistiques Responsives sur Mobile */
+    .key-stats-section {
+        flex-wrap: wrap; 
+        gap: 30px 20px;
+        padding: 30px 10px;
+    }
+    
+    .stat-item {
+        flex-basis: calc(50% - 20px); 
+    }
+    
+    .stat-value {
+        font-size: 1.8em; 
+    }
+    
+    /* Grille des raisons en 1 colonne sur les mobiles */
+    .reasons-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
-        padding: 0 20px;
     }
-    .region-grid section {
-        max-width: 100%;
-        min-height: auto;
-        padding: 25px;
+    .reason-card {
+        text-align: center;
     }
-    
-    /* 🛑 Surcharge pour permettre le retour à la ligne sur mobile/tablette */
-    .region-buttons-wrapper {
-        flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
-        overflow-x: hidden;
-        padding-bottom: 0;
-        justify-content: flex-start; /* Réaligne les boutons à gauche en mode wrap */
+    /* Les styles .card-icon existent déjà, mais nous assurons le centrage */
+    .reason-card .card-icon {
+        margin: 0 auto 15px auto; 
     }
     
-    .region-buttons-wrapper button {
-        margin-right: 8px; 
-        margin-bottom: 8px; /* Ajout d'une marge verticale pour la mise en page multi-lignes */
+    /* Grille de destinations en 1 colonne sur les mobiles */
+    .destination-cards-grid {
+        grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 480px) {
-    .grid { grid-template-columns: 1fr; padding: 1rem; }
-    h1:nth-of-type(2) { font-size: 2em; margin-top: 40px; margin-bottom: 30px; }
-    .accueil-container h1 { font-size: 35px; }
-    .accueil-container p { font-size: 16px; }
-    .sejour, .button > .Button:not(.sejour) > button { width: 90%; padding: 10px 20px; }
-
-    .region h1 { font-size: 1.8em; }
-    .region-grid {
-        padding: 0 1rem;
+    
+    /* Grille d'expériences en 1 colonne sur les mobiles */
+    .experiences-grid {
+        grid-template-columns: 1fr;
     }
-    .region-buttons-wrapper button {
-        padding: 7px 12px;
-        font-size: 0.85em;
+    /* Les styles .card-icon existent déjà, mais nous assurons le centrage */
+    .experience-card .card-icon {
+        margin: 0 auto 15px auto; 
     }
 }

@@ -29,7 +29,7 @@ const allActivities = [
         difficulty: "Modérée",
         description: "Ascension du point culminant du Togo (986m) avec vue panoramique sur la région des Plateaux. Découverte de la flore tropicale et des villages de montagne.",
         inclusions: ["Guide expérimenté", "Transport", "Déjeuner", "+1 autres inclusions"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "mont.jpg", // Chemin à vérifier
     },
     {
         id: 2,
@@ -41,7 +41,7 @@ const allActivities = [
         difficulty: "Facile",
         description: "Exploration du plus grand marché de médecine traditionnelle d'Afrique de l'Ouest. Rencontre avec les guérisseurs et découverte des pratiques ancestrales.",
         inclusions: ["Guide culturel", "Explications détaillées", "Respect des traditions"],
-        image: "/public/images/marche-feticheurs.jpg", // Chemin à vérifier
+        image: "/mar.png", // Chemin à vérifier
     },
     {
         id: 3,
@@ -53,7 +53,7 @@ const allActivities = [
         difficulty: "Facile",
         description: "Découverte de la magnifique cascade de Womé au cœur de la forêt tropicale. Baignade rafraîchissante et observation de la faune locale.",
         inclusions: ["Transport", "Guide nature", "Temps de baignade"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "cascade.jpg", // Chemin à vérifier
     },
     {
         id: 4,
@@ -65,7 +65,7 @@ const allActivities = [
         difficulty: "Modérée",
         description: "Safari dans le parc national Oti-Kéran pour observer éléphants, antilopes, singes et oiseaux dans leur habitat naturel. Nuit en lodge.",
         inclusions: ["Transport 4*4", "Ranger", "Hébergement", "+ 1 autre inclusion"],
-        image: "/public/images/marche-feticheurs.jpg", // Chemin à vérifier
+        image: "/fazao.jpeg", // Chemin à vérifier
     },
     {
         id: 5,
@@ -77,7 +77,7 @@ const allActivities = [
         difficulty: "Facile",
         description: "Initiation aux danses traditionnelles togolaises avec des artistes locaux. Apprentissage des rythmes et mouvements authentiques.",
         inclusions: ["Professeur expert", "Costumes traditionnels", "Musique en direct"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "danser.png", // Chemin à vérifier
     },
     {
         id: 6,
@@ -89,7 +89,7 @@ const allActivities = [
         difficulty: "Modéré",
         description: "Exploration des fonds marins de la côte togolaise. Découverte de la faune marine et des récifs coralliens préservés.",
         inclusions: ["Équipement complet", "Instructeur certifié", "Transport bateau"],
-        image: "/public/images/marche-feticheurs.jpg", // Chemin à vérifier
+        image: "/plongee.jpeg", // Chemin à vérifier
     },
     {
         id: 7,
@@ -101,7 +101,7 @@ const allActivities = [
         difficulty: "Facile",
         description: "Séance de massage avec des huiles essentielles locales dans un cadre naturel apaisant. Techniques ancestrales de relaxation.",
         inclusions: ["Huiles naturelles", "Thérapeute qualifié", "Cadre paisible"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "mass.png", // Chemin à vérifier
     },
     {
         id: 8,
@@ -113,7 +113,7 @@ const allActivities = [
         difficulty: "Facile",
         description: "Apprentissage des techniques de pêche traditionnelle avec les pêcheurs locaux sur le lac Togo. Expérience authentique et conviviale.",
         inclusions: ["Pirogue traditionnelle", "Matériel de pêche", "Guide pêcheur"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "peche.png", // Chemin à vérifier
     },
     {
         id: 9,
@@ -125,7 +125,7 @@ const allActivities = [
         difficulty: "Modéré",
         description: "Circuit à vélo à travers les paysages de savane du nord. Visite de villages traditionnels et rencontre avec les communautés locales.",
         inclusions: ["Vélo tout-terrain", "Casque", "Guide local"],
-        image: "fazao.jpeg", // Chemin à vérifier
+        image: "velo.png", // Chemin à vérifier
     },
 ];
 
@@ -166,7 +166,6 @@ export default function Activite() {
                 </div>
             </div>
 
-            {/* -------------------- SECTION : LISTE DES ACTIVITÉS (DYNAMIQUE) -------------------- */}
             <div className="activities-list-section">
                 <h2 className="section-main-title">Activités disponibles</h2>
                 <p className="section-main-subtitle">
@@ -178,7 +177,6 @@ export default function Activite() {
                     {filteredActivities.map((activity) => (
                         <div key={activity.id} className="activity-card">
                             <div className="activity-image-container">
-                                {/* Utilisation de l'image de l'objet */}
                                 <img src={activity.image} alt={activity.title} className="activity-image" />
                             </div>
 

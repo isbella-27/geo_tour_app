@@ -4,10 +4,10 @@ import Accueil from './Pages/Accueil/Accueil';
 import Destination from './Pages/Destination/Destination';
 import Hebergement from './Pages/Hebergement/Hebergement';
 import Culture from './Pages/Culture/Culture';
-import Cuisine from './Pages/Cuisine/Cuisine';
 import Activite from './Pages/Activite/Activite';
-import Contact from './Pages/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import Contact from './Pages/Contact/Contact';
+import Cuisine from './Pages/Cuisine/Cuisine';
 
 export default function App() {
   return (

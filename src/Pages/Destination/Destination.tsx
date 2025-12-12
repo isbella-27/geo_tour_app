@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 // Importation des icônes de React Icons
 import { FaMapMarkerAlt, FaRegCalendarAlt, FaStore, FaPagelines, FaLandmark, FaMountain, FaCoffee, FaSafari, FaTree, FaWater } from 'react-icons/fa';
@@ -147,7 +146,7 @@ export default function Destination() {
 
           {/* CARTE DE DAPAONG */}
           <section className="destination-card">
-            <img src="keran.webp" alt="Vue des Savanes" className="destination-image" />
+            <img src="keran.jpg" alt="Vue des Savanes" className="destination-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Dapaong</h3>

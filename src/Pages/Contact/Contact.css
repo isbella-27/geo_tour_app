@@ -1,0 +1,296 @@
+/* ==========================================================
+   1. STRUCTURE GÉNÉRALE ET BANDEAU (HEADER) - Style Immersif
+   ========================================================== */
+
+/* ⭐️ CONTENEUR PRINCIPAL LIMITÉ - S'APPLIQUE UNIQUEMENT AU CONTENU INFÉRIEUR ⭐️ */
+.contact-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Padding latéral pour les petits écrans */
+}
+
+/* Style de la bannière d'accueil - PLEINE LARGEUR */
+.contact-header-section {
+    min-height: 50vh; /* Hauteur de 50vh */
+    
+    /* ⚠️ REMPLACEZ CETTE LIGNE par le chemin de votre image */
+    background-image: url('contact2.jpeg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
+    
+    margin-bottom: 40px;
+    padding: 20px 0; 
+}
+
+/* Limite la largeur du texte dans la bannière */
+.contact-content-wrapper {
+    max-width: 1200px; 
+    width: 100%;
+    padding: 0 15px; 
+    box-sizing: border-box;
+}
+
+.contact-main-title {
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: 200; 
+    margin-bottom: 15px;
+    margin-top: 0;
+    text-align: center;
+
+}
+
+.contact-description {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif; 
+    line-height: 1.4;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   2. MISE EN PAGE PRINCIPALE (Formulaire + Bureaux)
+   ========================================================== */
+
+.contact-form-section {
+    display: flex;
+    gap: 30px; 
+    margin-bottom: 60px;
+}
+
+/* Colonne Formulaire */
+.form-container-wrapper {
+    flex: 2; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+}
+
+/* Colonne Bureaux */
+.offices-container {
+    flex: 1; 
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f5f5f5; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-section-title, .offices-section-title {
+    color: #333; /* Noir standard pour ces titres comme sur l'image */
+    font-size: 1.8em;
+    margin-bottom: 25px; /* Plus d'espace sous le titre 'Envoyez-nous un message' */
+    font-weight: bold;
+}
+
+/* Suppression du form-section-subtitle car il n'est pas dans l'image finale */
+
+
+/* ==========================================================
+   3. STYLES DU FORMULAIRE (Double colonnes)
+   ========================================================== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace entre les lignes de formulaires */
+}
+
+/* Nouveau style pour les groupes de deux champs (Nom/Email et Téléphone/Sujet) */
+.form-group-inline {
+    display: flex;
+    gap: 20px; /* Espace entre les champs sur la même ligne */
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Permet à chaque champ de prendre une moitié de la ligne */
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ccc; /* Bordure plus claire pour correspondre à l'image */
+    border-radius: 4px; /* Rayon plus petit pour correspondre à l'image */
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Compteur de caractères */
+.char-count {
+    text-align: right;
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 5px;
+}
+
+
+/* Style du bouton d'envoi */
+.submit-button {
+    background-color: #00796b; 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px; /* Espace sous le message */
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #005a4d;
+}
+
+.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ... (Messages de statut) ... */
+
+
+/* ==========================================================
+   4. STYLES DE LA SECTION BUREAUX (Lomé et Kpalimé)
+   ========================================================= */
+
+.office-detail {
+    background-color: white; /* Fond blanc pour les cartes de bureau */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Légère ombre pour la séparation */
+    margin-bottom: 20px;
+}
+
+.office-detail h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.office-detail p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Style des icônes pour les coordonnées */
+.contact-icon {
+    color: #00796b;
+    font-size: 1.1em;
+    margin-right: 8px; 
+    min-width: 15px; 
+}
+
+
+/* ==========================================================
+   6. STYLES DE LA CARTE DE LOCALISATION (MapComponent)
+   ========================================================== */
+
+.map-section {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Ombre pour l'encadré */
+}
+
+.map-section .section-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden; /* Important pour les bords arrondis */
+}
+
+/* Le conteneur de la carte doit avoir une hauteur, c'est défini inline dans le JSX (style={{ height: '400px'}}) */
+/* Vous pouvez aussi définir la hauteur ici si vous préférez: */
+/*
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+}
+*/
+
+/* ==========================================================
+   5. RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 768px) {
+    /* Le formulaire et les bureaux s'empilent */
+    .contact-form-section {
+        flex-direction: column; 
+    }
+
+    /* Les champs inline s'empilent également */
+    .form-group-inline {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-header-section {
+        min-height: 35vh;
+        padding: 50px 0;
+    }
+
+    .contact-main-title {
+        font-size: 40px;
+    }
+
+    .contact-description {
+        font-size: 18px;
+    }
+
+    .form-container-wrapper, .offices-container {
+        padding: 20px;
+    }
+}
+
+/* ... (Media queries pour les petites tailles d'écran) ... */

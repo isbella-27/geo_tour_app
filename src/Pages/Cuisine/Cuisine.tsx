@@ -22,7 +22,7 @@ export default function Cuisine() {
 
           {/* CARTE 1 : Fufu */}
           <section className="cuisine-card">
-            <img src="fazao.jpeg" alt="Plat de Fufu avec sauce" className="cuisine-image" />
+            <img src="fufu.jpeg" alt="Plat de Fufu avec sauce" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Fufu</h3>
@@ -42,7 +42,7 @@ export default function Cuisine() {
 
           {/* CARTE 2 : Akoumé */}
           <section className="cuisine-card">
-            <img src="Akoume.webp" alt="Plat d'Akoumé" className="cuisine-image" />
+            <img src="Akoumé.jpeg" alt="Plat d'Akoumé" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Akoumé</h3>
@@ -62,7 +62,7 @@ export default function Cuisine() {
 
           {/* CARTE 3 : Koklo mémé */}
           <section className="cuisine-card">
-            <img src="Koklo_meme.webp" alt="Plat de Poulet grillé togolais" className="cuisine-image" />
+            <img src="poulet.jpeg" alt="Plat de Poulet grillé togolais" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Koklo mémé</h3>
@@ -82,7 +82,7 @@ export default function Cuisine() {
 
           {/* CARTE 4 : Abobo (Haricot) */}
           <section className="cuisine-card">
-            <img src="Abobo.webp" alt="Plat de Haricots rouges" className="cuisine-image" />
+            <img src="haricot.jpeg" alt="Plat de Haricots rouges" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Abobo (Haricot)</h3>
@@ -102,7 +102,7 @@ export default function Cuisine() {
 
           {/* CARTE 5 : Gboma Dési */}
           <section className="cuisine-card">
-            <img src="Gboma_Desi.webp" alt="Plat de sauce Gboma" className="cuisine-image" />
+            <img src="Gboma.jpeg" alt="Plat de sauce Gboma" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Gboma Dési</h3>
@@ -122,7 +122,7 @@ export default function Cuisine() {
 
           {/* CARTE 6 : Pâtes noires */}
           <section className="cuisine-card">
-            <img src="fazao.jpeg" alt="Plat de Pâte de maïs noir" className="cuisine-image" />
+            <img src="amala.jpeg" alt="Plat de Pâte de maïs noir" className="cuisine-image" />
             <div className="card-content">
               <div className="city-region-header">
                 <h3>Pâtes noires</h3>
@@ -155,7 +155,7 @@ export default function Cuisine() {
 
           {/* CARTE 1 : Tchoukoutou */}
           <section className="boisson-card">
-            <img src="/tchoukoutou.jpg" alt="Tchoukoutou" className="boisson-image" />
+            <img src="/tchouk.jpg" alt="Tchoukoutou" className="boisson-image" />
             <div className="card-content">
               <h3>Tchoukoutou</h3>
               <p className="boisson-tag"><FaTag /> Bière traditionnelle</p>
@@ -167,7 +167,7 @@ export default function Cuisine() {
 
           {/* CARTE 2 : Vin de palme */}
           <section className="boisson-card">
-            <img src="/vin-palme.jpg" alt="Vin de palme" className="boisson-image" />
+            <img src="/Vin.jpeg" alt="Vin de palme" className="boisson-image" />
             <div className="card-content">
               <h3>Vin de palme</h3>
               <p className="boisson-tag"><FaTag /> Boisson fermentée</p>
@@ -179,7 +179,7 @@ export default function Cuisine() {
 
           {/* CARTE 3 : Bissap */}
           <section className="boisson-card">
-            <img src="fazao.jpeg" alt="Bissap" className="boisson-image" />
+            <img src="bissap1.jpeg" alt="Bissap" className="boisson-image" />
             <div className="card-content">
               <h3>Bissap</h3>
               <p className="boisson-tag"><FaTag /> Infusion</p>

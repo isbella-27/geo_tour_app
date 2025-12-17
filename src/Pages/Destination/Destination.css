@@ -1,3 +1,6 @@
+/* ==================================================================
+// 1. Styles généraux et Bannière (Header)
+// ================================================================== */
 
 body {
     font-family: 'Arial', sans-serif;
@@ -27,6 +30,7 @@ body {
     text-align: center;
 }
 
+/* 🎯 TITRE DE LA BANNIÈRE : 60px, poids 200 (léger) */
 .destination-header-section h1 {
     font-size: 60px;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,6 +38,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* 🎯 SOUS-TITRE DE LA BANNIÈRE : 24px */
 .destination-header-section p {
     font-size: 24px;
     margin-top: 1px;
@@ -117,6 +122,7 @@ body {
 
 /* ==================================================================
 // 3. ÉLÉMENTS DE LA CARTE (TITRES, TAGS & FOOTER)
+// (Les couleurs sont conservées telles quelles)
 // ================================================================== */
 
 /* --- EN-TÊTE DU TITRE ET DE LA RÉGION --- */
@@ -231,7 +237,7 @@ body {
     margin: 0;
 }
 
-/* ➡️ STYLE AJOUTÉ POUR L'ICÔNE DE CALENDRIER REACT */
+/* ➡️ STYLE POUR L'ICÔNE DE CALENDRIER REACT */
 .best-period svg {
     margin-right: 8px;
     font-size: 1.2em; 
@@ -240,7 +246,7 @@ body {
 
 /* Styles du bouton Réserver (Link to="/Contact") */
 .book-button {
-    background-color: #006A4E;
+    background-color: #006A4E; /* Couleur conservée */
     color: white;
     border: none;
     padding: 10px 20px;

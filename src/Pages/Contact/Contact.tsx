@@ -172,8 +172,8 @@ export default function Contact() {
             <div className="office-detail">
               <h3>Lomé</h3>
               <p><FaMapMarkerAlt className="contact-icon" /> Boulevard du 13 Janvier, Lomé</p>
-              <p><FaPhone className="contact-icon" /> +228 22 XX XX XX</p>
-              <p><FaEnvelope className="contact-icon" /> lome@togo-tourisme.com</p>
+              <p><FaPhone className="contact-icon" /> +228 98321828</p>
+              <p><FaEnvelope className="contact-icon" /> geotourtogo@gmail.com</p>
               <p><FaClock className="contact-icon" /> Lun-Ven : 8h-17h; Sam : 8h-12h</p>
             </div>
 

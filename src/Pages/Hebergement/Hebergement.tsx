@@ -10,30 +10,24 @@ import { FaBed, FaBriefcase, FaConciergeBell, FaMapMarkerAlt, FaMountain, FaPark
 import { MdBeachAccess, MdOutlineFastfood, MdTerrain } from 'react-icons/md';
 
 
-// --- FONCTION UTILITAIRE : GESTION DU PARSING JSON (Correction Erreur slice) ---
+// --- FONCTIONS UTILITAIRES (Inchangées, OK) ---
+
 const getFeaturesArray = (features: any): string[] => {
-    // 1. Si c'est déjà un Array, le renvoyer
     if (Array.isArray(features)) {
-        // TypeScript est content
         return features; 
     }
-    // 2. Si c'est une chaîne de caractères (JSON sérialisé), on tente de le parser
     if (typeof features === 'string') {
         try {
             const parsed = JSON.parse(features);
-            // On vérifie que le résultat du parsing est bien un tableau
             return Array.isArray(parsed) ? parsed : [];
         } catch (e) {
-            // Log l'erreur de parsing et renvoie un tableau vide
             console.error("Erreur de désérialisation JSON des features:", e);
             return [];
         }
     }
-    // 3. Sinon (null, undefined, ou autre), renvoyer vide
     return []; 
 };
 
-// --- FONCTION UTILITAIRE : Gestion des Icônes (Correction TS7006) ---
 const getFeatureIcon = (feature: string) => { 
     switch (feature) {
         case 'WiFi gratuit':
@@ -91,7 +85,6 @@ export default function Hebergement() {
         } catch (err) {
             console.error("Erreur de chargement des hébergements:", err);
             
-            // 🚀 Correction TS18046: Gère l'erreur de type 'unknown'
             let errorMessage = "Erreur de connexion inconnue. (Vérifiez le réseau et l'API Laravel)";
 
             if (err instanceof Error) {
@@ -154,15 +147,15 @@ export default function Hebergement() {
                         filteredAccommodations.map((accommodation) => (
                             <section key={accommodation.id} className="accommodation-card">
                                 <div className="card-image-wrapper">
-                                    {/* Correction TS2322 : Utilise ?? '' pour gérer null */}
                                     {accommodation.image ? (
                                         <img 
-                                            src={accommodation.image ?? ''} 
+                                            // 🚀 CORRECTION DE L'URL DE L'IMAGE 
+                                            // Ajoute l'URL de base Laravel + /storage/
+                                            src={`http://127.0.0.1:8000/storage/${accommodation.image}`} 
                                             alt={accommodation.title} 
                                             className="card-image" 
                                         />
                                     ) : (
-                                        // Placeholder pour l'image manquante
                                         <div className="card-image-placeholder">Image Non Fournie</div>
                                     )}
                                 </div>
@@ -176,7 +169,6 @@ export default function Hebergement() {
                                         {accommodation.description}
                                     </p>
                                     <div className="card-features">
-                                        {/* 🎯 Utilise getFeaturesArray pour garantir que c'est un Array (Correction slice) */}
                                         {getFeaturesArray(accommodation.features).slice(0, 3).map((feature, index) => (
                                             typeof feature === 'string' && feature.trim() !== '' && (
                                                 <span key={index} className="feature-tag">
@@ -184,7 +176,6 @@ export default function Hebergement() {
                                                 </span>
                                             )
                                         ))}
-                                        {/* Utilisation de la version sécurisée pour vérifier la longueur */}
                                         {getFeaturesArray(accommodation.features).length > 3 &&
                                             <span className="feature-tag">
                                                 {getFeatureIcon('+ 1 autres')} + {(getFeaturesArray(accommodation.features).length - 3)} autres

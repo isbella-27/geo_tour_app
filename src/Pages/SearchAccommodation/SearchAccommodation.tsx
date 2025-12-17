@@ -120,7 +120,7 @@ export default function SearchAccommodation({ activeFilter, setActiveFilter }) {
 
                     {/* BOUTON DE RECHERCHE */}
                     <button className="search-button" onClick={handleSearch}>
-                        <FaSearch className="search-icon" /> Rechercher
+                         Rechercher
                     </button>
                 </div>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}

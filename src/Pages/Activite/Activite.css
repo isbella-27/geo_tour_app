@@ -1,33 +1,33 @@
 
 .activities-header-section {
-    min-height: 50vh;
-    background-image: url('act.jpeg');
+    min-height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/act.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 80px 20px;
-    margin-bottom: 0;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
 }
 
 .activities-header-section h1 {
-    font-size: 60px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: center;
+    font-size: 75px;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
 }
 
 .activities-header-section p {
     font-size: 24px;
-    margin-top: 0;
-    line-height: 1.4;
     max-width: 800px;
-    text-align: center;
+    margin-top: 15px;
+    font-weight: 300;
 }
 
 

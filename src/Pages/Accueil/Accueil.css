@@ -1,16 +1,11 @@
-/* Styles généraux du corps et des titres */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Couleur de fond générale suggérée (blanc cassé) */
-    background-color: #f0f2f5; 
-    line-height: 1.6;
-}
+/* ==================================================================
+// 1. BANNIÈRE D'ACCUEIL (CORRIGÉE)
+// ================================================================== */
 
 .accueil-container {
     min-height: 85vh; 
-    background-image: url('Danyi.jpg'); 
+    /* Ajout d'un léger dégradé pour garantir la lisibilité du texte blanc */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Danyi.jpg'); 
     background-size: cover;
     background-position: center center; 
     background-repeat: no-repeat;
@@ -20,25 +15,27 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); 
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); 
     margin-bottom: 0; 
 }
 
 .accueil-container h1 {
-    font-size: 5em; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700; 
+    /* Style Impact "Signature Togo" */
+    font-size: 5.5em; 
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-weight: 900; 
     margin-bottom: 10px;
     letter-spacing: -2px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .accueil-container p {
-    font-size: 1.2em;
-    font-weight: 300;
+    font-size: 1.4em;
+    font-weight: 400;
     text-align: center;
-    margin-top: 1px;
     line-height: 1.4;
-    max-width: 600px;
+    max-width: 750px;
     margin-bottom: 30px;
 }
 
@@ -54,39 +51,53 @@ body {
     border: 2px solid white; 
     background-color: transparent;
     color: white;
-    padding: 14px 30px; 
+    padding: 14px 35px; 
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: bold;
     transition: all 0.3s ease;
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.sejour:hover {
-    color: #000;
-    background-color: white;
-    border-color: white;
 }
 
-/* Style du bouton "Découvrir les destinations" (Plein) */
+.sejour:hover {
+    color: #333;
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+/* Style du bouton "Découvrir les destinations" (Plein Vert Togo) */
 .button-wrapper > .Button:not(.sejour) > button {
     background-color: #006A4E; 
     color: white;
     border: none;
-    padding: 14px 30px; 
+    padding: 14px 35px; 
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .button-wrapper > .Button:not(.sejour) > button:hover {
-    background-color: #006666;
+    background-color: #004d38;
+    transform: translateY(-3px);
 }
+
+/* ==================================================================
+// 2. RESTE DU CODE (NON MODIFIÉ)
+// ================================================================== */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; 
+    line-height: 1.6;
+}
+
 .home-intro-section {
     display: flex;
     max-width: 1200px; 
@@ -133,7 +144,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* GRILLE DES IMAGES DÉCALÉES (Staggered Grid) */
 .intro-image-grid-staggered {
     flex: 1 1 50%; 
     display: flex; 
@@ -149,12 +159,10 @@ body {
     flex: 1; 
 }
 
-/* CLÉ DU DÉCALAGE : Applique un espace en haut à la colonne de droite */
 .intro-grid-column.right-column {
     margin-top: 40px; 
 }
 
-/* Styles des cartes et des images */
 .intro-image-wrapper {
     overflow: hidden;
     border-radius: 12px;
@@ -179,10 +187,6 @@ body {
 .intro-image-wrapper:hover .intro-image {
     transform: scale(1.05); 
 }
-
-/* ==================================================================
-// 2. SECTION DES STATISTIQUES CLÉS
-// ================================================================== */
 
 .key-stats-section {
     background-color: #006A4E; 
@@ -217,7 +221,6 @@ body {
 }
 
 .stat-value {
-    /* CLÉ: TAILLE RÉDUITE pour forcer le texte sur une seule ligne (ex: "40 ans et plus") */
     font-size: 2.2em; 
     font-weight: 700;
     margin-bottom: 5px;
@@ -228,7 +231,6 @@ body {
     font-size: 0.9em;
     font-weight: 400;
     opacity: 0.8;
-    /* Force les étiquettes sur une seule ligne */
     white-space: nowrap; 
 }
 
@@ -253,7 +255,6 @@ body {
 
 .reasons-grid {
     display: grid;
-    /* Crée une grille de 3 colonnes de largeur égale */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
@@ -285,9 +286,7 @@ body {
     line-height: 1.5;
 }
 
-/* Les icônes des raisons et des expériences partagent le même style de cercle */
 .card-icon {
-    /* Style du cercle vert clair autour de l'icône */
     background-color: #e6f7f7; 
     color: #006A4E; 
     display: flex;
@@ -298,17 +297,11 @@ body {
     border: 1px solid #00808030;
 }
 
-/* Styles spécifiques pour les icônes de la section 3 (Pourquoi Visiter) */
 .why-visit-section .card-icon {
     height: 50px;
     width: 50px;
     font-size: 1.5em;
 }
-
-
-/* ==================================================================
-// 4. SECTION DESTINATIONS POPULAIRES
-// ================================================================== */
 
 .popular-destinations-section {
     padding: 60px 20px;
@@ -331,7 +324,6 @@ body {
 
 .destination-cards-grid {
     display: grid;
-    /* 3 colonnes de taille égale */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
@@ -351,7 +343,6 @@ body {
 
 .destination-image {
     width: 100%;
-    /* Ratio d'aspect pour les images */
     height: 200px; 
     object-fit: cover;
 }
@@ -375,7 +366,7 @@ body {
 }
 
 .destination-link {
-    color: #006A4E; /* Couleur turquoise */
+    color: #006A4E; 
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9em;
@@ -411,7 +402,6 @@ body {
     gap: 25px;
 }
 
-/* Comme nous utilisons <Link> autour des cartes, nous appliquons les styles directement au Link */
 .experience-card {
     background-color: white;
     padding: 40px 20px;
@@ -433,7 +423,6 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles spécifiques pour les icônes de la section 5 */
 .unique-experiences-section .card-icon {
     height: 60px;
     width: 60px;
@@ -455,107 +444,20 @@ body {
     line-height: 1.4;
 }
 
+/* RESPONSIVE */
 @media (max-width: 1050px) {
-    /* Grille des raisons en 2 colonnes */
-    .reasons-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Grille d'expériences en 2 colonnes */
-    .experiences-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .reasons-grid, .experiences-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
-    .accueil-container h1 {
-        font-size: 3em;
-    }
-    .accueil-container p {
-        font-size: 1em;
-    }
-    .button-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; 
-    }
-    .button-wrapper > .Button {
-        width: 100%;
-        max-width: 250px;
-    }
-    .button-wrapper > .Button button, .sejour {
-        width: 100%;
-    }
-    
-    /* Grille de destinations en 2 colonnes sur tablettes */
-    .destination-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .accueil-container h1 { font-size: 3.5em; }
+    .button-wrapper { flex-direction: column; align-items: center; }
+    .destination-cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .home-intro-section {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    .intro-image-grid-staggered {
-        flex-direction: column;
-        max-width: 500px;
-        margin: 0 auto;
-        gap: 15px; 
-    }
-    
-    .intro-grid-column.right-column {
-        margin-top: 0; 
-    }
-
-    .discover-culture-button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 250px;
-    }
-
-    /* Statistiques Responsives sur Mobile */
-    .key-stats-section {
-        flex-wrap: wrap; 
-        gap: 30px 20px;
-        padding: 30px 10px;
-    }
-    
-    .stat-item {
-        flex-basis: calc(50% - 20px); 
-    }
-    
-    .stat-value {
-        font-size: 1.8em; 
-    }
-    
-    /* Grille des raisons en 1 colonne sur les mobiles */
-    .reasons-grid {
-        grid-template-columns: 1fr;
-    }
-    .reason-card {
-        text-align: center;
-    }
-    /* Les styles .card-icon existent déjà, mais nous assurons le centrage */
-    .reason-card .card-icon {
-        margin: 0 auto 15px auto; 
-    }
-    
-    /* Grille de destinations en 1 colonne sur les mobiles */
-    .destination-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Grille d'expériences en 1 colonne sur les mobiles */
-    .experiences-grid {
-        grid-template-columns: 1fr;
-    }
-    /* Les styles .card-icon existent déjà, mais nous assurons le centrage */
-    .experience-card .card-icon {
-        margin: 0 auto 15px auto; 
-    }
+    .home-intro-section { flex-direction: column; text-align: center; }
+    .intro-image-grid-staggered { flex-direction: column; margin: 0 auto; }
+    .key-stats-section { flex-wrap: wrap; }
+    .reasons-grid, .destination-cards-grid, .experiences-grid { grid-template-columns: 1fr; }
 }

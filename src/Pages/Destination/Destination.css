@@ -12,38 +12,36 @@ body {
 
 
 .destination-header-section {
-    min-height: 50vh;
-    background-image: url('/mont.jpg'); 
+    min-height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/mont.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 40px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
     padding: 20px;
     text-align: center;
 }
 
 /* 🎯 TITRE DE LA BANNIÈRE : 60px, poids 200 (léger) */
 .destination-header-section h1 {
-    font-size: 60px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    margin-bottom: 15px;
+    font-size: 75px;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
 }
 
 /* 🎯 SOUS-TITRE DE LA BANNIÈRE : 24px */
 .destination-header-section p {
     font-size: 24px;
-    margin-top: 1px;
-    line-height: 1.4;
     max-width: 800px;
+    margin-top: 15px;
+    font-weight: 300;
 }
 
 /* ==================================================================

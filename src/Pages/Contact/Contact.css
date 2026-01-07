@@ -11,24 +11,18 @@
 
 /* Style de la bannière d'accueil - PLEINE LARGEUR */
 .contact-header-section {
-    min-height: 50vh; /* Hauteur de 50vh */
-    
-    /* ⚠️ REMPLACEZ CETTE LIGNE par le chemin de votre image */
-    background-image: url('contact2.jpeg'); 
-    
+    min-height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/contact2.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    
     color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
-    
-    margin-bottom: 40px;
-    padding: 20px 0; 
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
 }
 
 /* Limite la largeur du texte dans la bannière */
@@ -40,12 +34,12 @@
 }
 
 .contact-main-title {
-    font-size: 60px;
-    font-family: Arial, Helvetica, sans-serif; 
-    font-weight: 200; 
-    margin-bottom: 15px;
-    margin-top: 0;
-    text-align: center;
+    font-size: 75px;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
 
 }
 
